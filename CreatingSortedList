@@ -1,0 +1,30 @@
+listTotal= ['M','A','R','C','I','N','']
+slownik ={}
+
+for enum,a in enumerate(listTotal):
+  slownik[enum]=a
+
+# swap
+
+slownikSwap ={}
+for a in slownik:
+  slownikSwap[slownik[a]] = a
+  
+listaMoja ={'':1000}
+
+while True:
+  itemAdd =input('co dodac')
+  indexItemAdd = slownikSwap[itemAdd]
+  if itemAdd in listaMoja:
+    print('already added')
+    continue
+  if len(listaMoja) ==0:
+    listaMoja[itemAdd]=slownikSwap[itemAdd]
+  else:
+    for a in listaMoja:
+      if slownikSwap[itemAdd]<listaMoja[a]:
+        listaMoja[itemAdd]=slownikSwap[itemAdd]
+        break
+    
+  
+  print ('listaMoja ',sorted(listaMoja.values()))
