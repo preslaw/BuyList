@@ -1,0 +1,43 @@
+listTotal= ['M','A','R','C','I','N','']
+slownik ={}
+
+for enum,a in enumerate(listTotal):
+  slownik[enum]=a
+
+def wstaw(itemAdd,listTotal):
+  print(type(listTotal))
+  print (slownikSwap)
+  for enum,a in enumerate(listTotal):
+    slownik[enum]=a
+  insertIndex = int(input('where to add'))
+  listTotal.insert(insertIndex,itemAdd)
+    
+  print (listTotal)
+  
+  
+
+slownikSwap ={}
+for a in slownik:
+  slownikSwap[slownik[a]] = a
+  
+listaMoja ={'':1000}
+
+while True:
+  itemAdd =input('co dodac')
+  try:
+    indexItemAdd = slownikSwap[itemAdd]
+  except KeyError:
+    itemAdd = wstaw(itemAdd,listTotal)
+  if itemAdd in listaMoja:
+    print('already added')
+    continue
+  if len(listaMoja) ==0:
+    listaMoja[itemAdd]=slownikSwap[itemAdd]
+  else:
+    for a in listaMoja:
+      if slownikSwap[itemAdd]<listaMoja[a]:
+        listaMoja[itemAdd]=slownikSwap[itemAdd]
+        break
+    
+  
+  print ('listaMoja ',listaMoja.keys())
